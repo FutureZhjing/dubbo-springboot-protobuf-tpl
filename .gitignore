@@ -1,0 +1,11 @@
+.gradle
+.idea
+build
+*.iml
+.DS_Store
+*.sh
+!build-server.sh
+logs
+*.log
+application-local.yml
+EncryptorTest.kt
