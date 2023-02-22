@@ -2,5 +2,6 @@ rootProject.name = "dubbo-tpl"
 
 include(
   ":provider",
-  ":consumer"
+  ":consumer",
+  ":common"
 )

@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.springframework.boot.gradle.tasks.bundling.BootJar
 
 plugins {
-  id("org.springframework.boot") version "3.0.2"
+  id("org.springframework.boot") version Version.spring_boot
   id("io.spring.dependency-management") version "1.1.0"
   kotlin("jvm") version "1.7.22"
   kotlin("plugin.spring") version "1.7.22"
@@ -33,6 +33,22 @@ allprojects {
   dependencies {
     implementation(Deps.spring_boot_starter)
     implementation(Deps.spring_boot_starter_web)
+    implementation(Deps.Dubbo.dubbo_spring_boot_starter)
+    api(Deps.Dubbo.dubbo_rpc_dubbo)
+
+    // TODO delete after dubbo 3.2.0 released
+    api(Deps.zookeeper)
+    implementation("org.apache.curator:curator-framework:5.4.0")
+    implementation("org.apache.curator:curator-recipes:5.4.0")
+    implementation("org.apache.curator:curator-x-discovery:5.4.0")
+
+    api(Deps.Dubbo.dubbo_registry_zookeeper) {
+      exclude("org.apache.zookeeper", "zookeeper")
+      exclude("org.apache.curator", "curator-framework")
+      exclude("org.apache.curator", "curator-recipes")
+      exclude("org.apache.curator", "curator-x-discovery")
+    }
+    implementation(Deps.kotlin_logging_jvm)
     implementation(kotlin("reflect"))
     implementation(kotlin("stdlib-jdk8"))
   }
@@ -51,6 +67,7 @@ allprojects {
 
   }
 }
+
 
 subprojects {
 

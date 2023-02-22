@@ -1,5 +1,6 @@
 package com.woofate
 
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
@@ -8,6 +9,7 @@ import org.springframework.boot.runApplication
  * @version 1.0
  */
 @SpringBootApplication
+@EnableDubbo(scanBasePackages = ["com.woofate.service"])
 class ProviderAppRunner
 
 fun main(args: Array<String>) {
