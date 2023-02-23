@@ -1,3 +1,3 @@
 dependencies {
-  api(project(Modules.MODULE_COMMON))
+  api(project(Modules.MODULE_API))
 }

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-target=../common/build/generated/source/proto/main/java
+target=../api/build/generated/source/proto/main/java
 
 mvn clean install &&
   rm target/classes/*.proto &&
