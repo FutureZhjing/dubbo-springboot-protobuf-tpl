@@ -1,0 +1,2 @@
+grpc:
+	sh grpc.sh

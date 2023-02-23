@@ -34,7 +34,7 @@ allprojects {
     implementation(Deps.spring_boot_starter)
     implementation(Deps.spring_boot_starter_web)
     implementation(Deps.Dubbo.dubbo_spring_boot_starter)
-    api(Deps.Dubbo.dubbo_rpc_dubbo)
+    api(Deps.Dubbo.dubbo_rpc_triple)
 
     // TODO delete after dubbo 3.2.0 released
     api(Deps.zookeeper)
